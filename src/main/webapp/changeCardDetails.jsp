@@ -40,7 +40,7 @@ if(session.getAttribute("isLoggedIn")!=null)
         if(!cardno.equals("") && !cvv.equals("") && !expirydate.equals(""))
         {
          Statement stmt = con.createStatement();
-         stmt.executeUpdate("INSERT into cards(id,cardno, cvv,expirydate) values ('"+id+"','"+cardno+"','"+cvv+"','"+expirydate+"')");
+         stmt.executeUpdate("INSERT into cards(id,cardno, cvv,expirydate) values (+?+,+?+,+?+,+?+)");
          out.print("<b style='color:green'> * Card details added *</b>");   
         }
         else
